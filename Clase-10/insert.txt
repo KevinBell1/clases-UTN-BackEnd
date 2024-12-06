@@ -1,0 +1,16 @@
+cuando queremos crear una base de datos podemos llamarla y se creara automaticamente
+use (nombre)
+
+esta se guardara con el llamamiento db
+
+creamos una coleccion (se puede entender como array o lista) utilizando la siguiente funcion
+db createCollection('test')
+
+podemos insertar un dato dentro a test usando
+db.test.insertOne({"nombre":"pepe"})   ---> en formato json
+
+este elemento se generara con un id
+
+para insertar varios objetos
+db.test.insertMany([{"nombre":"usuario1"} , {"nombre":"usuario2"}])
+

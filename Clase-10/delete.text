@@ -1,0 +1,7 @@
+la nomenclatura de mongo db siempre es con arrays de objetos
+
+borramos con 
+db.test.deleteOne({edad: {$eq: 70}})
+
+podemos eliminar por id con 
+db.test.deleteOne({ _id : ObjectId('(id copiado)')})

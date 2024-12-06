@@ -1,0 +1,9 @@
+CREATE TABLE orden_productos(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    orden_id INT NOT NULL,
+    producto_id INT NOT NULL,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10,2),
+    FOREIGN KEY orden_id REFERENCES ordenes(id),
+    FOREIGN KEY producto_id REFERENCES productos(id)
+)

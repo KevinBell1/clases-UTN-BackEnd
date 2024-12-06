@@ -1,0 +1,27 @@
+podemos buscar segun valores como
+db.test.find({nombre: "pepe"})
+siempre escribiendo en array
+
+busca a todos los elementos que cumplan con la condicion de la expresion regular (que comience con usuarios)
+db.test.find(
+    {
+        nombre: {$regex: '^usuario'}
+    }
+)
+podemos agregarle .limit(2)  si queremos traer los primeros dos usuarios
+
+podemos buscar por edad con 
+Greater Than 
+db.test.find(
+    {
+        edad: {$gt: 18}
+    }
+)
+
+siempre debemos buscar como hacer tal cosa con mongo compass
+db.test.find(
+    {
+        edad: {$gt: 18, $lt: 21}
+    }
+)
+si buscamos en google $lt mongo nos lleva a la explicacion de la funcion y a las demas funciones

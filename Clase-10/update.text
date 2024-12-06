@@ -1,0 +1,6 @@
+update actualiza un valor dandole dos objetos, la condicion y el objeto al que se actualizara 
+
+db.test.updateOne(
+    { _id: ObjectId("(id)")},
+    { $set:{"nombre" : "lauti" , "apellido":"rodriguez", "edad" : 25}}
+)
