@@ -1,0 +1,17 @@
+[
+    {
+        "producto" : "TV Samsung 48' pulgadas",
+        "precio": 2500,
+        "id" : 1
+    },
+    {
+        "producto" : "Gabinete Nvidia",
+        "precio": 1200,
+        "id" : 2
+    },
+    {
+        "producto" : "Monitor Nvidia 24' pulgadas",
+        "precio": 800,
+        "id" : 3
+    }
+]

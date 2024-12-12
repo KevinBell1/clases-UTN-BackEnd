@@ -1,11 +1,10 @@
-import { crearJson2, leerJson2 } from "./utils/fileSystemManager.js";
-
+import { crearJson, leerJson2, productManager } from "./utils/fileSystemManager.js";
 
 
 
 const test = async (fileName, object) =>{
     try{
-        const probar = await crearJson2(fileName,object)
+        const probar = await crearJson(fileName,object)
 
         console.log('accion super importante')
     }
@@ -13,4 +12,10 @@ const test = async (fileName, object) =>{
         console.error('Ha ocurrido un error desconocido')
     }
 }
-test('probandopor2', {})
+test('counters', {
+    products : 0
+})
+
+productManager.createProduct("hola", "descripcion", 4000)
+productManager.createProduct("hola", "descripcion", 1000)
+productManager.createProduct("hola", "descripcion", 1000)

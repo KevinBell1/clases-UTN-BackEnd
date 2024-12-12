@@ -1,6 +1,6 @@
 import filesystem from 'fs'
 
-const crearJson2 = async (fileName, object) => {
+const crearJson = async (fileName, object) => {
 
     try{
             //si ocurre esto...
@@ -33,8 +33,55 @@ const leerJson2 = async (file) => {
     const lector = await filesystem.promises.readFile(jsonConverted, {encoding: 'utf-8'})
 
     const parseConverter = JSON.parse(lector)
-    console.log(parseConverter)
+    return parseConverter
 }
 
 
-export{crearJson2, leerJson2}
+export{crearJson, leerJson2}
+
+
+
+/* Crear un archivo llamado counters.json usando la funcion crearJson, counters.json sera un objeto con el sig formato
+{
+    products: 0
+}
+
+Crear un ProductManager
+debe ser una clase con los metodos estaticos:
+createProduct
+updateProduct
+deleteProduct
+getProducts
+getProductById
+
+Debe manejarse con persistencia de datos con filesystem usando las funciones de utilidad creadas en filesystemManager.js. Los productos se pueden guardar en un archivo llamado products.json
+
+Se debe tener en cuenta que al crear un producto se recibira titulo, descripcion y precio, el id se le asignara automaticamente usando un contador que debe persistir en el archivo json llamado counters.json. Obviamente al crear un producto el contador se debe actualizar en el archivo counters.json y se debe guardar
+
+REGLAS:
+-No se puede modificar los archivos usando filesystem, siempre deberemos usar la funcion crearJson o leerJson
+-No puede crashear la aplicacion, los errores deben estar manejados
+-Los parametros de cada funcion deben estar validados y en caso de no estar deberan tener sus propios throws */
+
+export class productManager{
+    static async getCounter(){
+        const counterCantidad = await leerJson2("counters")
+        return counterCantidad ? counterCantidad : 0
+    }
+    static productos = []
+
+    static async createProduct(titulo, descripcion, precio){
+        const contador = await this.getCounter()
+        const nuevoContador = contador + 1
+        await crearJson('counters', {"productos" : nuevoContador} )
+        this.productos.push({
+            "titulo": titulo,
+            "descripcion": descripcion,
+            "precio": precio,
+            "id": nuevoContador
+        })
+        await crearJson("productos", this.productos)
+        console.dir(`Producto creado con id:` + nuevoContador)
+    }
+}
+

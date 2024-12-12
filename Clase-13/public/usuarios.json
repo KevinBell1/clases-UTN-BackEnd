@@ -1,0 +1,23 @@
+[
+    {
+        "nombre":"Mariela",
+        "username":"Mari464",
+        "password":"vkbanksvjrnvsxv",
+        "ultima_conexion": "hoy",
+        "id": 1
+    },
+    {
+        "nombre": "Jose",
+        "username": "Josesito799",
+        "password":"vkbanksvjrnvsxv",
+        "ultima_conexion": "hoy",
+        "id": 2
+    },
+    {
+        "nombre": "Juliana",
+        "username": "Juli77",
+        "password":"vkbanksvjrnvsxv",
+        "ultima_conexion": "hoy",
+        "id": 3
+    }
+]
