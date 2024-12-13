@@ -1,0 +1,20 @@
+[
+    {
+        "username" : "cosme_fulanito",
+        "password": "132346",
+        "id": 1,
+        "active": true
+    },
+    {
+        "username" : "siempre_viva",
+        "password": "79889",
+        "id": 2,
+        "active": true
+    },
+    {
+        "username" : "el_barto",
+        "password": "654646",
+        "id": 3,
+        "active": false
+    }
+]
