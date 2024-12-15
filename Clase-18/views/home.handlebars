@@ -1,0 +1,6 @@
+<h1>{{this.payload.title}}</h1>
+{{#if this.payload.isRegistered}}
+    <span>{{this.payload.username}}</span>
+    {{else}}
+    <a href="#">Registrate aqui</a>
+{{/if}}
