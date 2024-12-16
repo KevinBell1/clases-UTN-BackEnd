@@ -1,0 +1,24 @@
+{{!-- view_props = {
+        layout: 'main',
+        status: 200,
+        ok:true,
+        payload:{
+            title: 'Ofertas de la semana',
+            products
+        },
+        helpers:{
+            
+        }
+    } --}}
+
+<h1>{{this.payload.title}}</h1>
+{{#each this.payload.products}} {{!-- each funciona como un map --}}
+    <div>
+        <h2>{{this.nombre}}</h2>
+        <div><b>Precio: </b>${{this.precio}}</div>
+        <div><b>Quedan: </b>{{this.stock}}</div>
+        <a href="/product/detail/{{this.id}}">Ir a detalle</a>
+        <hr>
+    </div>
+{{/each}}
+<a href="/product/new">Crear producto</a>

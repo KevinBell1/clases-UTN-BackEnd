@@ -1,0 +1,44 @@
+<h1>Cargar producto</h1>
+
+{{!-- El valor del form que le llega al backend dependera del name de los inputs --}}
+<form method="POST" action="/product/new">
+    <div>
+        <label for="name">Ingrese el nombre del producto</label>
+        <input placeholder="TV Samsung" id="nombre" name="nombre" value="{{this.payload.form_state.nombre.valor}}"/>
+        {{#if this.payload.form_state.nombre.error}}
+            <span>Error: {{this.payload.form_state.nombre.error}}</span>
+        {{/if}}
+    </div>
+    <div>
+        <label for="precio">Ingrese el precio del producto</label>
+        <input  id="precio" name="precio" value="{{this.payload.form_state.precio.valor}}"/>
+    </div>
+    <div>
+        <label for="stock">Ingrese el stock del producto</label>
+        <input  id="stock" name="stock" value="{{this.payload.form_state.stock.valor}}"/>
+    </div>
+    <div>
+        <label for="">Seleccione las categorias de su producto:</label>
+        <br>
+        <input type="checkbox" value="tecnologia" name="categoria">
+        <span>Tecnologia</span>
+        <br>
+    </div>
+    <div>
+        <label for=""></label>
+        <input type="checkbox" value="hogar" name="categoria">
+        <span>Hogar</span>
+        <br>
+    </div>
+    <div>
+        <label for=""></label>
+        <input type="checkbox" value="office" name="categoria">
+        <span>Office</span>
+        <br>
+    </div>
+    <div>
+        <label for="descripcion">Ingrese descripcion</label>
+        <textarea  id="descripcion" name="descripcion" value="{{this.payload.form_state.descripcion.valor}}"></textarea>
+    </div>
+    <input type="submit" value="Crear">
+</form>
