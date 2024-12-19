@@ -2,7 +2,32 @@
 
 {{!-- El valor del form que le llega al backend dependera del name de los inputs --}}
 <form method="POST" action="/product/new">
-    <div>
+    {{#each this.payload.form_state}}
+        <div>
+            <label for="{{this.name}}">{{this.label}}</label>
+            {{#if this.isInput}}
+                <input
+                    placeholder="{{this.placeholder}}"
+                    id="{{this.name}} "
+                    name="{{this.name}}"
+                    value="{{this.valor}}"
+                    type="{{this.type}}"
+                />
+            {{/if}} 
+            {{#if this.errors.length}}
+                <ul>
+                    {{#each}}
+                        <li>
+                            {{this.message}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        </div>
+    
+    {{/each}}
+
+    {{!-- <div>
         <label for="name">Ingrese el nombre del producto</label>
         <input placeholder="TV Samsung" id="nombre" name="nombre" value="{{this.payload.form_state.nombre.valor}}"/>
         {{#if this.payload.form_state.nombre.error}}
@@ -39,6 +64,6 @@
     <div>
         <label for="descripcion">Ingrese descripcion</label>
         <textarea  id="descripcion" name="descripcion" value="{{this.payload.form_state.descripcion.valor}}"></textarea>
-    </div>
+    </div> --}}
     <input type="submit" value="Crear">
 </form>
